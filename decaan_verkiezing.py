@@ -28,3 +28,25 @@ class DecaanKiezer(Kiezer):
             print(f"{self.naam} heeft gestemd op {kandidaat} ({self.opleiding})")
         else:
             print(f"{self.naam} kan niet stemmen op {kandidaat} ({kandidaat.opleiding})")
+
+# Lijst van kandidaten
+kandidaten = [
+    DecaanKandidaat("Lies", "Toegepaste Informatica"),
+    DecaanKandidaat("Tom", "Rechten")
+]
+
+# Lijst van kiezers
+kiezers = [
+    DecaanKiezer("Sanne", "Toegepaste Informatica"),
+    DecaanKiezer("Joris", "Rechten"),
+    DecaanKiezer("Luca", "Biologie")
+]
+
+# Laat kiezers stemmen
+for kiezer in kiezers:
+    for kandidaat in kandidaten:
+        kiezer.stem(kandidaat)
+
+# Toon resultaat
+for kandidaat in kandidaten:
+    print(f"{kandidaat} kreeg {len(kandidaat.stemmen)} stemmen.")
